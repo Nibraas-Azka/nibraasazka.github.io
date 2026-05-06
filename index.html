@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nibraas Azka - IT Support Specialist | Lulusan SMKN 9 Surakarta | Lulusan Magang PT KAI </title>
+<meta name="description" content="Nibraas Azka - IT Support Specialist SMK Negeri 9 Surakarta. Pengalaman 4 bulan PKL PT KAI Daop 6 Yogyakarta. MikroTik, CCTV, Fiber Optic, Server Maintenance. Siap kerja!.">
+<meta name="keywords" content="IT Support, MikroTik, CCTV KAI, Fiber Optic, SMKN 9 Surakarta, PT KAI, Network Engineer, Debian Linux">
+<link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚂</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+<style>
+:root {
+  --primary: #1e3a8a;
+  --secondary: #0ea5e9;
+  --accent: #f59e0b;
+  --kai-red: #dc2626;
+  --success: #10b981;
+  --glass: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.1);
+  --bg-dark: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Animated KAI Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, var(--kai-red)20 2px, transparent 2px),
+    radial-gradient(circle at 80% 70%, var(--secondary)20 1px, transparent 1px),
+    radial-gradient(circle at 50% 90%, var(--accent)15 1px, transparent 1px);
+  background-size: 60px 60px, 40px 40px, 80px 80px;
+  animation: kaiFloat 40s ease-in-out infinite;
+  z-index: -2;
+}
+
+@keyframes kaiFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(20px, -20px) rotate(120deg); }
+  66% { transform: translate(-15px, 15px) rotate(240deg); }
+}
+
+/* Navigation */
+.navbar {
+  position: fixed; top: 0; width: 100%; padding: 1rem 0;
+  backdrop-filter: blur(20px); background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--glass-border); z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo {
+  font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.4rem;
+  background: linear-gradient(135deg, var(--kai-red), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.nav-menu { display: flex; list-style: none; gap: 2rem; }
+.nav-link {
+  color: var(--text-secondary); text-decoration: none; font-weight: 500;
+  position: relative; transition: all 0.3s ease; font-size: 0.95rem;
+}
+
+.nav-link:hover, .nav-link.active { color: var(--kai-red); }
+.nav-link::after {
+  content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
+  background: var(--kai-red); transition: width 0.3s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* Hero Section */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(220,38,38,0.2); backdrop-filter: blur(10px);
+  border: 1px solid var(--kai-red); padding: 0.7rem 1.8rem;
+  border-radius: 50px; font-size: 1rem; font-weight: 600; margin-bottom: 1.5rem;
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(220,38,38,0); }
+}
+
+.hero h1 {
+  font-size: clamp(3.5rem, 8vw, 6rem); font-weight: 800; line-height: 1.1;
+  margin-bottom: 1rem; background: linear-gradient(135deg, var(--text-primary) 0%, var(--kai-red) 50%, var(--secondary) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.3rem, 3vw, 2rem); color: var(--text-secondary);
+  margin-bottom: 2.5rem; font-weight: 400; max-width: 600px;
+}
+
+.cta-primary, .cta-secondary {
+  display: inline-block; padding: 1.2rem 2.5rem; margin: 0.5rem;
+  border-radius: 50px; font-weight: 600; text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); font-size: 1.1rem;
+  position: relative; overflow: hidden;
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, var(--kai-red), var(--accent));
+  color: white; box-shadow: 0 12px 35px rgba(220,38,38,0.4);
+}
+
+.cta-secondary {
+  background: transparent; color: var(--text-primary);
+  border: 2px solid var(--secondary); backdrop-filter: blur(10px);
+}
+
+.cta-primary:hover { 
+  transform: translateY(-5px) scale(1.05); 
+  box-shadow: 0 20px 50px rgba(220,38,38,0.6); 
+}
+
+.cta-secondary:hover { 
+  background: var(--secondary); transform: translateY(-5px); 
+}
+
+/* Sections */
+.section { padding: 120px 0; max-width: 1200px; margin: 0 auto; }
+.section-padding { padding: 0 2rem; }
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; text-align: center;
+  margin-bottom: 4rem; background: linear-gradient(135deg, var(--kai-red), var(--secondary));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.section-title::after {
+  content: ''; position: absolute; bottom: -15px; left: 50%;
+  transform: translateX(-50%); width: 100px; height: 5px;
+  background: linear-gradient(90deg, var(--kai-red), var(--secondary));
+  border-radius: 3px;
+}
+
+.kai-cert {
+  position: relative;
+}
+.kai-cert::before {
+  content: '🏆 OFFICIAL'; 
+  position: absolute; top: 15px; right: 15px;
+  background: var(--kai-red); color: white;
+  padding: 0.5rem 1rem; border-radius: 25px;
+  font-size: 0.8rem; font-weight: 700;
+  animation: pulse-glow 2s infinite;
+}
+
+/* KAI Experience Card - SPECIAL */
+.kai-card {
+  background: linear-gradient(135deg, rgba(220,38,38,0.1), rgba(15,23,42,0.8));
+  backdrop-filter: blur(20px); border: 1px solid rgba(220,38,38,0.3);
+  border-radius: 24px; padding: 3rem; margin-bottom: 2rem;
+  position: relative; overflow: hidden;
+}
+
+.kai-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background: linear-gradient(90deg, var(--kai-red), var(--accent), var(--kai-red));
+}
+
+.kai-badge {
+  position: absolute; top: 20px; right: 20px; background: var(--kai-red);
+  color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem;
+  font-weight: 600; box-shadow: 0 4px 15px rgba(220,38,38,0.4);
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--glass); backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border); border-radius: 20px;
+  padding: 2.5rem; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative; overflow: hidden;
+}
+
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 35px 70px rgba(14, 165, 233, 0.2);
+  border-color: var(--secondary);
+}
+
+.card-icon {
+  width: 70px; height: 70px; border-radius: 18px; display: flex;
+  align-items: center; justify-content: center; margin-bottom: 1.8rem;
+  font-size: 1.8rem; color: var(--bg-dark);
+}
+
+/* Skills Tags */
+.skills-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-tag {
+  display: flex; align-items: center; gap: 1.2rem; padding: 1.2rem 1.8rem;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 16px; transition: all 0.4s ease; cursor: pointer;
+}
+
+.skill-tag:hover {
+  transform: translateX(12px); background: rgba(220,38,38,0.15);
+  border-color: var(--kai-red); box-shadow: 0 10px 30px rgba(220,38,38,0.2);
+}
+
+/* Stats */
+.stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem; margin: 4rem 0;
+}
+
+.stat-item { text-align: center; padding: 2.5rem; }
+.stat-number {
+  font-size: 3.5rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--kai-red), var(--secondary));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* Contact */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-menu { display: none; }
+  .section-padding { padding: 0 1.5rem; }
+  .hero h1 { font-size: 2.8rem; }
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0; transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.show { opacity: 1; transform: translateY(0); }
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+</style>
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">NIBRAAS AZKA</div>
+    <ul class="nav-menu">
+      <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+      <li><a href="#profil" class="nav-link">Profil</a></li>
+      <li><a href="#sertifikat" class="nav-link">🏆 Sertifikat</a></li>
+      <li><a href="#kai" class="nav-link">PT KAI</a></li>
+      <li><a href="#portfolio" class="nav-link">📸 Dokumentasi</a></li>
+      <li><a href="#skill" class="nav-link">Skills</a></li>
+      <li><a href="#kontak" class="nav-link">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="beranda" class="hero">
+  <div class="hero-badge">
+    <i class="fas fa-certificate"></i>
+     PT KAI Daop 6 Yogyakarta
+  </div>
+  <h1>Nibraas<span style="background: linear-gradient(135deg, var(--kai-red), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> Azka</span></h1>
+  <p class="hero-subtitle">
+    IT Support Specialist<br>
+    <strong>Lulusan SMKN 9 Surakarta | Alumni Magang PT. KAI (persero) </strong>
+  </p>
+  <div>
+    <a href="#kontak" class="cta-primary">🚀 Lamar Kerja</a>
+    <a href="#kai" class="cta-secondary">Detail Pengalaman KAI</a>
+  </div>
+</section>
+
+<!-- Profil -->
+<section id="profil" class="section fade-in delay-1">
+  <div class="section-padding">
+    <h2 class="section-title">Latar Belakang</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--success), #059669);">
+          <i class="fas fa-school"></i>
+        </div>
+        <h3>SMK Negeri 9 Surakarta</h3>
+        <p><strong>Teknik Jaringan Komputer & Telekomunikasi</strong><br>
+        <em>2023 - 2026 (Lulusan 2026)</em></p>
+        <ul style="color: var(--text-secondary); padding-left: 1.5rem; margin-top: 1rem; font-size: 0.95rem;">
+          <li>Kelas 12: MikroTik, Debian Traffic Analysis, Cyber Security</li>
+          <li>Kelas 11: VoIP P2P, Arduino Robotics, VirtualBox/GNS3</li>
+          <li>Kelas 10: Cisco Packet Tracer Basic Network</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--secondary), var(--accent));">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <h3>Ready to Work</h3>
+        <p>Siap kerja full-time sebagai <strong>IT Support / Network Technician</strong> di ISP atau perusahaan IT manapun di Indonesia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats KAI -->
+<section class="section fade-in delay-2">
+  <div class="section-padding">
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number">4</span>
+        <p>Bulan PKL<br><small>PT KAI Daop 6</small></p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <p>Troubleshooting<br><small>Stasiun Daop 6</small></p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">6+</span>
+        <p>Stasiun<br><small>Daop 6 Yogyakarta</small></p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">✅</span>
+        <p>Sertifikat<br><small>Penghargaan KAI</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PT KAI EXPERIENCE - MAIN FEATURE -->
+<section id="kai" class="section fade-in delay-1">
+  <div class="section-padding">
+    <h2 class="section-title">Praktik Kerja Lapangan <span style="color: var(--kai-red);">PT KAI</span></h2>
+    
+    <!-- KAI MAIN CARD -->
+    <div class="kai-card">
+      <div class="kai-badge">SERTIFIKAT PENGHARGAAN</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        <div style="background: rgba(220,38,38,0.15); padding: 1.5rem; border-radius: 16px; border-left: 5px solid var(--kai-red);">
+          <h4 style="color: var(--kai-red); margin-bottom: 0.5rem;">
+            <i class="fas fa-video"></i> CCTV & PIDS Systems
+          </h4>
+          <p style="color: var(--text-secondary);">Instalasi CCTV, pengecekan rekaman CCTV, PIDS indoor/outdoor seluruh Daop 6</p>
+        </div>
+        <div style="background: rgba(14,165,233,0.15); padding: 1.5rem; border-radius: 16px; border-left: 5px solid var(--secondary);">
+          <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">
+            <i class="fas fa-fiber-optic"></i> Fiber Optic Specialist
+          </h4>
+          <p style="color: var(--text-secondary);">Senter fiber optik testing, splicing fiber optik, crimping LAN Cat6</p>
+        </div>
+        <div style="background: rgba(245,158,11,0.15); padding: 1.5rem; border-radius: 16px; border-left: 5px solid var(--accent);">
+          <h4 style="color: var(--accent); margin-bottom: 0.5rem;">
+            <i class="fas fa-server"></i> Server Maintenance
+          </h4>
+          <p style="color: var(--text-secondary);">Perawatan wallmount server setiap stasiun Daop 6 Yogyakarta</p>
+        </div>
+        <div style="background: rgba(34,197,94,0.15); padding: 1.5rem; border-radius: 16px; border-left: 5px solid var(--success);">
+          <h4 style="color: var(--success); margin-bottom: 0.5rem;">
+            <i class="fas fa-tools"></i> Hardware Support
+          </h4>
+          <p style="color: var(--text-secondary);">Bongkar pasang PC/Laptop, instalasi Windows 10, printer setup, running text</p>
+        </div>
+      </div>
+      <div style="background: rgba(220,38,38,0.2); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(220,38,38,0.3);">
+        <h3 style="color: var(--kai-red); margin-bottom: 1rem;">
+          <i class="fas fa-train"></i> Sistem Kereta Api
+        </h3>
+        <p><strong>Locotrack, Modem Train, GSM Card, Network on Train, TV Jadwal Keberangkatan, Mixer Audio Rapat</strong></p>
+      </div>
+      <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem; color: var(--text-secondary);">
+        <strong>Unit IT 2 Stasiun Solo Balapan | 5 Januari - 30 April 2026</strong>
+      </p>
+    </div>
+
+    <!-- SMK Skills -->
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+          <i class="fas fa-route"></i>
+        </div>
+        <h3>MikroTik Mastery</h3>
+        <p>Hotspot, Filter Rules, 7 Layer OSI, VLAN, VPN, Firewall</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">
+          <i class="fab fa-linux"></i>
+        </div>
+        <h3>Debian Linux</h3>
+        <p>Network Traffic Analysis, Debian SQL, Database, MRTG & Cacti Monitoring</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skill" class="section fade-in delay-3">
+  <div class="section-padding">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-tag">
+        <i class="fas fa-train" style="color: var(--kai-red); font-size: 1.5rem;"></i>
+        <div><strong>PT KAI Systems</strong><br>CCTV, PIDS, Locotrack, GSM Train, Running Text</div>
+      </div>
+      <div class="skill-tag">
+        <i class="fas fa-fiber-optic" style="color: var(--secondary); font-size: 1.3rem;"></i>
+        <div><strong>Fiber Optic</strong><br>Splicing, OTDR Senter, Crimping LAN Cat6</div>
+      </div>
+      <div class="skill-tag">
+        <i class="fas fa-server" style="color: var(--accent);"></i>
+        <div><strong>Server & Hardware</strong><br>Wallmount Server, Windows 10, PC/Laptop Service</div>
+      </div>
+      <div class="skill-tag">
+        <i class="fas fa-route" style="color: #8b5cf6;"></i>
+        <div><strong>MikroTik RouterOS</strong><br>Hotspot, Firewall, VLAN, VPN, 7 Layer</div>
+      </div>
+      <div class="skill-tag">
+        <i class="fab fa-linux" style="color: #fcaf3e;"></i>
+        <div><strong>Debian Linux</strong><br>Traffic Analysis, SQL Database, VirtualBox</div>
+      </div>
+      <div class="skill-tag">
+        <i class="fas fa-network-wired" style="color: var(--success);"></i>
+        <div><strong>Networking</strong><br>Cisco Packet Tracer, GNS3, VoIP P2P</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTFOLIO + SERTIFIKAT (PASTE DI SINI) ===== -->
+<section id="portfolio" class="section fade-in delay-2">
+  <div class="section-padding">
+    <h2 class="section-title">📸 Dokumentasi Proyek <span style="color: var(--kai-red);">PT KAI</span></h2>
+    <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 4rem;">
+      Bukti kerja nyata 4 bulan PKL Daop 6 Yogyakarta
+    </p>
+    
+    <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
+      
+      <!-- SERTIFIKAT SPECIAL - POSISI 1 -->
+      <div class="gallery-item kai-cert">
+        <img src="sertifikat.jpeg" alt="Sertifikat Penghargaan PT KAI Daop 6" 
+             style="width: 100%; height: 280px; object-fit: cover;">
+        <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.98), rgba(15,23,42,0.95));">
+          <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">
+            <i class="fas fa-trophy"></i> SERTIFIKAT RESMI
+          </h3>
+          <p style="font-size: 1rem; max-width: 280px; line-height: 1.5;">
+            Penghargaan PT KAI Daop 6 Yogyakarta<br>
+            <strong>4 Bulan PKL Berhasil</strong>
+          </p>
+        </div>
+      </div>
+      
+      <!-- FOTO LAIN (kosong dulu, isi nanti) -->
+      <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Pemasangan dan Setting CCTV.jpeg" alt="CCTV KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">CCTV</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Pemasangan & Setting CCTV</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Pengambilan Rekaman CCTV.jpeg" alt="CCTV KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">CCTV</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Pengambilan Rekaman CCTV</p>
+    </div>
+  </div>
+      <!-- Tambah foto lain di sini -->
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Penggantian SSD Rekaman CCTV Kereta Api.jpeg" alt="CCTV KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">SSD</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Penggantian SSD</p>
+    </div>
+  </div>
+
+   <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Perbaikan Jaringan & Senter FO.jpeg" alt="Network KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Network</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Perbaikan Jaringan & Fiber Optic</p>
+    </div>
+  </div>
+
+<div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Perbaikan Jaringan Offline Normal Kembali.jpeg" alt="Network KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Network</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Perbaikan Kendala Jaringan</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Perbaikan Mesin Antrian.jpeg" alt="Hardware KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Hardware & Software</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Perbaikan Mesin Antrian</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Perbaikan Mesin Printer.jpeg" alt="Hardware KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Hardware & Software</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Perbaikan Printer</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Mikrotik DHCP Network.jpeg" alt="Network KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Network</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Mikrotik DHCP Network</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Mikrotik Hotspot Login.jpeg" alt="Network-Project" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Network</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Projek Mikrotik Hotspot Login</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="RouterBoard Mikrotik Static Network.jpeg" alt="Network-Project" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Network</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Projek Mikrotik Router Static</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Konfigurasi Cacti Monitoring Jaringan dan Perangkat.jpeg" alt="Network-Project" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Network</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Cacti Monitoring Jaringan & Perangkat</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Setting ruang Rapat.jpeg" alt="Audio Visual-KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Audio Visual</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Setup Ruang Rapat</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Setting TV dan Perapihan Kabel.jpeg" alt="Audio Visual-KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Audio Visual</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Cable Management</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Perawatan Wallmount Server.jpeg" alt="Server KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Server</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Server Maintenance</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Install Ulang PC OS Windows 10 & 11.jpeg" alt="Hardware KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Hardware & Software</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Install Ulang Sistem Operasi Windows 10 & 11</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Simulasi Networking Cisco Packet Tracer.jpeg" alt="Network Simulation" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Network</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Simulasi Networking Cisco Packet Tracer</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" style="min-height: 320px; max-height: 350px; border-radius: 20px; overflow: hidden; background: var(--glass); border: 1px solid var(--glass-border); display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+      <img src="Tindak Lanjut Jaringan Offline Manjadi Normal Kembali.jpeg" alt="Network KAI" 
+           style="max-width: 95%; max-height: 220px; width: auto; height: auto; object-fit: contain;">
+    </div>
+    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.9), rgba(14,165,233,0.8)); padding: 1rem; text-align: center;">
+      <h3 style="margin: 0;">Network</h3>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">Perbaikan Jaringan dan Switch</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION SERTIFIKAT KHUSUS (SETELAH STATS) ===== -->
+<section id="sertifikat" class="section" style="background: linear-gradient(135deg, rgba(220,38,38,0.1), rgba(15,23,42,0.8)); margin: 80px 0;">
+  <div class="section-padding" style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <h2 class="section-title" style="color: var(--kai-red) !important; font-size: 3rem;">🏆</h2>
+    <h3 style="font-size: 2rem; margin-bottom: 2rem; background: linear-gradient(135deg, var(--kai-red), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Sertifikat Penghargaan Resmi
+    </h3>
+    <div style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 80px rgba(220,38,38,0.3); border: 4px solid var(--kai-red);">
+      <img src="sertifikat.jpeg" alt="Sertifikat PT KAI" 
+           style="width: 100%; height: 500px; object-fit: contain; background: white;">
+      <div style="position: absolute; top: 20px; right: 20px; background: var(--kai-red); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem; box-shadow: 0 10px 30px rgba(220,38,38,0.5);">
+        <i class="fas fa-certificate"></i> OFFICIAL
+      </div>
+    </div>
+    <p style="font-size: 1.3rem; color: var(--text-secondary); margin-top: 2rem; line-height: 1.6;">
+      <strong>PT Kereta Api Indonesia (Persero) Daop 6 Yogyakarta</strong><br>
+      Penghargaan atas kontribusi selama Praktik Kerja Lapangan
+    </p>
+  </div>
+</section>
+<!-- ===== END SERTIFIKAT ===== -->
+
+<!-- Kontak -->
+<section id="kontak" class="section fade-in">
+  <div class="section-padding">
+    <h2 class="section-title">Siap Kerja!</h2>
+    <p style="text-align: center; font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+      Lowongan IT Support / Internet Service Provider Technician <strong>Kirim pesan sekarang!</strong>
+    </p>
+    <div class="contact-grid">
+      <div>
+        <h3 style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+          <i class="fas fa-address-book"></i> Kontak Langsung
+        </h3>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; font-size: 1.2rem;">
+          <div style="display: flex; align-items: center; gap: 1.2rem; padding: 1rem; background: var(--glass); border-radius: 12px;">
+            <i class="fas fa-envelope" style="color: var(--secondary); width: 28px; font-size: 1.3rem;"></i>
+            <span>nibraasazka172@gmail.com</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 1.2rem; padding: 1rem; background: var(--glass); border-radius: 12px;">
+            <i class="fab fa-whatsapp" style="color: #25d366; width: 28px; font-size: 1.3rem;"></i>
+            <a href="https://wa.me/6288706677254" style="color: inherit; text-decoration: none;" target="_blank">
+              <strong>+62 887-0667-7254</strong>
+            </a>
+          </div>
+          <div style="display: flex; align-items: center; gap: 1.2rem; padding: 1rem; background: var(--glass); border-radius: 12px;">
+            <i class="fab fa-linkedin" style="color: #0077b5; width: 28px; font-size: 1.3rem;"></i>
+            <span>linkedin.com/in/nibraasazka</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+          <i class="fas fa-rocket"></i> Action Now
+        </h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6;">
+          Portfolio ini dibuat khusus untuk lowongan <strong>IT Support, Network Technician, Helpdesk</strong>.<br>
+          <strong>Response dalam 1 jam!</strong>
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="mailto:nibraasazka172@gmail.com?subject=Lowongan%20IT%20Support%20-%20Nibraas%20Azka" class="cta-primary" style="flex: 1; text-align: center; padding: 1.4rem;">
+            📧 Kirim Email
+          </a>
+          <a href="https://wa.me/6288706677254?text=Saya%20tertarik%20dengan%20portofolio%20IT%20Support%20Nibraas%20Azka" class="cta-secondary" style="flex: 1; text-align: center; padding: 1.4rem;" target="_blank">
+            💬 WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background: rgba(15, 23, 42, 0.9); border-top: 1px solid var(--glass-border); text-align: center; padding: 3rem 0; color: var(--text-secondary);">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+    <p><strong>Nibraas Azka</strong> © 2026 | <span style="color: var(--kai-red);">PT KAI Daop 6 Alumni</span> | SMKN 9 Surakarta<br>
+    Dibuat untuk karir IT Support yang gemilang 🚂💻</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Navbar scroll
+  window.addEventListener('scroll', () => {
+    document.querySelector('.navbar').style.background = 
+      window.scrollY > 100 ? 'rgba(15, 23, 42, 0.98)' : 'rgba(15, 23, 42, 0.95)';
+  });
+
+  // Active nav
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      if (scrollY >= (section.offsetTop - 200)) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+    });
+  });
+
+  // Fade animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('show'));
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // WA click tracking
+  document.querySelectorAll('a[href^="https://wa.me/6288706677254"]').forEach(link => {
+    link.addEventListener('click', () => {
+      gtag?.('event', 'whatsapp_click', { event_category: 'contact' });
+    });
+  });
+});
+</script>
+
+</body>
+</html>
